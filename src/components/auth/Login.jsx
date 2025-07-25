@@ -113,6 +113,7 @@ const Login = () => {
 
         // Create log entry for admin tracking
         const logData = {
+          // ! 👉 TASK 3: BUG FIX - MISSING ID CAUSING DELETION OF ALL LOGS
           id: new Date().toISOString(),
           userId: user.userId,
           username: email,

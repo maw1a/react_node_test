@@ -111,6 +111,7 @@ function App() {
                 <Route
                   path="/"
                   element={
+                    // ! 👉 TASK 1: ADDED PROTECTED ROUTE TO LANDING CAUSING REDIRECT TO LOGIN BEFORE LANDING
                     <ProtectedRoute>
                       <Landing />
                     </ProtectedRoute>
@@ -180,7 +181,10 @@ function App() {
                 />
 
                 {/* Protected User Routes */}
-                <Route path="/user/dashboard" element={<UserDashboard />} />
+                <Route path="/user/dashboard" element={
+                  // ! 👉 TASK 1: REMOVED PROTECTED ROUTE FROM DASHBOARD TO ALLOW VISIBILITY WITHOUT LOGIN
+                  <UserDashboard />
+                } />
                 <Route
                   path="/user/userpage"
                   element={

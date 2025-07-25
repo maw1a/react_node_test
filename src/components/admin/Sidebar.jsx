@@ -1,6 +1,6 @@
 import React from "react";
+import { FaChartPie, FaCog, FaList, FaTasks, FaUsers } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
-import { FaChartPie, FaUsers, FaTasks, FaCog } from "react-icons/fa";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -11,11 +11,15 @@ const Sidebar = () => {
     { path: "/admin/manage-users", label: "Manage Users", icon: <FaUsers /> },
     { path: "/admin/manage-tasks", label: "Manage Tasks", icon: <FaTasks /> },
     { path: "/admin/settings", label: "Settings", icon: <FaCog /> },
+    // ! 👉 TASK 2: ADDED USER LOGS
+    { path: "/admin/user-logs", label: "User Logs", icon: <FaList /> },
   ];
 
   return (
     <div className="w-64 min-h-screen p-6 bg-gray-900 text-white glassmorphism border-r border-gray-700">
-      <h2 className="text-2xl font-extrabold text-center text-gray-100 tracking-wide mb-6">⚙️ Admin Panel</h2>
+      <h2 className="text-2xl font-extrabold text-center text-gray-100 tracking-wide mb-6">
+        ⚙️ Admin Panel
+      </h2>
 
       <ul className="space-y-3">
         {menuItems.map(({ path, label, icon }) => (

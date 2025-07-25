@@ -3,6 +3,7 @@ import {
   FaBell,
   FaCalendarAlt,
   FaChartBar,
+  FaFilter,
   FaTasks,
   FaUser,
 } from "react-icons/fa";
@@ -14,6 +15,7 @@ const UserSidebar = () => {
   const { isAuthenticated } = useAuth();
 
   // Sidebar links with icons
+  // ! 👉 TASK 1: ADDED isAuthenticated CHECK TO HIDE OTHER PANELS
   const menuItems = isAuthenticated
     ? [
         { path: "/user/dashboard", label: "Dashboard", icon: <FaChartBar /> },
@@ -25,6 +27,8 @@ const UserSidebar = () => {
           icon: <FaBell />,
         },
         { path: "/user/profile", label: "Profile", icon: <FaUser /> },
+        // ! 👉 TASK 2: ADDED TASK FILTER
+        { path: "/user/task-filter", label: "Task Filter", icon: <FaFilter /> },
       ]
     : [{ path: "/user/dashboard", label: "Dashboard", icon: <FaChartBar /> }];
 
